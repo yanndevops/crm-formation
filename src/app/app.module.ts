@@ -1,9 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CoreModule } from './core/core.module';
+import { IconsModule } from './icons/icons.module';
+import { LoginModule } from './login/login.module';
+import { TextModule } from './text/text.module';
+import { UiModule } from './ui/ui.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -18,8 +22,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     TextModule,
     IconsModule,
     CoreModule,
-    NgbModule.forRoot(),
+    NgbModule,
     FontAwesomeModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
