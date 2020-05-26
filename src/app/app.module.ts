@@ -9,6 +9,7 @@ import { LoginModule } from './login/login.module';
 import { TextModule } from './text/text.module';
 import { UiModule } from './ui/ui.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,14 +17,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   imports: [
     BrowserModule,
+    LoginModule,
     AppRoutingModule,
     UiModule,
-    LoginModule,
     TextModule,
     IconsModule,
     CoreModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
 
   ],
   providers: [],
