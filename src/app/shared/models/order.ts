@@ -19,9 +19,11 @@ export class Order implements OrderI {
   }
 
   totalHt(): number {
+    console.log('TOTAL HT')
     return this.tjmHt * this.nbJours;
   }
   totalTtc(): number {
+    console.log('TOTAL TTC')
     return this.totalHt() * (1+ this.tva/100);
   }
 }
