@@ -26,4 +26,5 @@ export class Order implements OrderI {
     console.log('TOTAL TTC')
     return this.totalHt() * (1+ this.tva/100);
   }
+  
 }

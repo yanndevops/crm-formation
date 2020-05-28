@@ -1,18 +1,26 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TableLightComponent } from './components/table-light/table-light.component';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { TemplatesModule } from '../templates/templates.module';
 import { BtnComponent } from './components/btn/btn.component';
-import { TotalComponent } from './pipes/total/total.component';
-import { TotalPipe } from './pipes/total.pipe';
+import { TableDarkComponent } from './components/table-dark/table-dark.component';
+import { TableLightComponent } from './components/table-light/table-light.component';
 import { StateDirective } from './directives/state.directive';
+import { TotalPipe } from './pipes/total.pipe';
+import { TextModule } from '../text/text.module';
 
 
 
 @NgModule({
-  declarations: [TableLightComponent, BtnComponent, TotalComponent, TotalPipe, StateDirective],
+  declarations: [TableLightComponent, BtnComponent, TotalPipe, StateDirective, TableDarkComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    TemplatesModule,
+    TextModule
   ],
-  exports: [TableLightComponent, BtnComponent, TotalComponent, TotalPipe, StateDirective]
+  exports: [TableLightComponent, BtnComponent, TotalPipe, StateDirective, TableDarkComponent, TemplatesModule, TextModule]
 })
 export class SharedModule { }
+
+
