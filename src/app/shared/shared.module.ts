@@ -8,18 +8,19 @@ import { TableLightComponent } from './components/table-light/table-light.compon
 import { StateDirective } from './directives/state.directive';
 import { TotalPipe } from './pipes/total.pipe';
 import { TextModule } from '../text/text.module';
+import { TrashBtnComponent } from './components/trash-btn/trash-btn.component';
 
 
 
 @NgModule({
-  declarations: [TableLightComponent, BtnComponent, TotalPipe, StateDirective, TableDarkComponent],
+  declarations: [TableLightComponent, BtnComponent, TotalPipe, StateDirective, TableDarkComponent, TrashBtnComponent],
   imports: [
     CommonModule,
     RouterModule,
     TemplatesModule,
     TextModule
   ],
-  exports: [TableLightComponent, BtnComponent, TotalPipe, StateDirective, TableDarkComponent, TemplatesModule, TextModule]
+  exports: [TableLightComponent, BtnComponent, TotalPipe, StateDirective, TableDarkComponent, TemplatesModule, TextModule, TrashBtnComponent]
 })
 export class SharedModule { }
 

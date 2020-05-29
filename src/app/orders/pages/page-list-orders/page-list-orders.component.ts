@@ -1,25 +1,29 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Order } from 'src/app/shared/models/order';
-import { OrdersService } from '../../services/orders.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { Btn } from 'src/app/shared/interfaces/btn';
-import { Subscription, Observable } from 'rxjs';
+import { Order } from 'src/app/shared/models/order';
+import { OrdersService } from '../../services/orders.service';
 
 @Component({
   selector: 'app-page-list-orders',
   templateUrl: './page-list-orders.component.html',
   styleUrls: ['./page-list-orders.component.scss']
 })
-export class PageListOrdersComponent implements OnInit, OnDestroy {
-  // public collection: Order[];
+export class PageListOrdersComponent implements OnInit {
   public collection$: Observable<Order[]>;
   public headers: string[];
   public btnRoute: Btn;
   public btnHref: Btn;
   public btnAction: Btn;
+  public title: string;
+  public subtitle: string;
   public states = Object.values(StateOrder);
-  sub: Subscription;
-  constructor(private os: OrdersService) { }
+  constructor(
+    private os: OrdersService,
+    public route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     this.btnRoute = {
@@ -35,9 +39,6 @@ export class PageListOrdersComponent implements OnInit, OnDestroy {
       action: true
     };
     this.collection$ = this.os.collection;
-    // this.sub = this.os.collection.subscribe((datas) => {
-    //   this.collection = datas;
-    // });
     this.headers = [
       'Type',
       'Client',
@@ -60,13 +61,7 @@ export class PageListOrdersComponent implements OnInit, OnDestroy {
     console.log('open popup');
   }
 
-  ngOnDestroy() {
-    // this.sub.unsubscribe();
-  }
-
 }
-
-
 
 
 

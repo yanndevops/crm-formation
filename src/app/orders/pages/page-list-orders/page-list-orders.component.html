@@ -1,4 +1,5 @@
-<app-template-a title="Orders" subtitle="All orders">
+
+<app-template-a *ngIf="route.data | async as datas" [title]="datas.title" [subtitle]="datas.subtitle">
 
   <app-table-light *ngIf="collection$ | async as collection" [headers]="headers">
 
@@ -14,6 +15,7 @@
           <option *ngFor="let state of states" [value]="state" [selected]="state === item.state">{{ state }}</option>
         </select>
       </td>
+      <i class="fa fa-trash" aria-hidden="true"></i>
     </tr>
 
   </app-table-light>
